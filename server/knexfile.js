@@ -2,7 +2,18 @@
 
 module.exports = {
   development: {
-    client: "pg",
-    connection: "postgres://localhost/cjs-web-store",
+    client: "postgresql",
+    connection: {
+      database: "cjs-web-store",
+      user: "yuri",
+      password: "123456",
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: "knex_migrations",
+    },
   },
 };
